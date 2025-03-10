@@ -1,5 +1,6 @@
 import requests
 import allure
+from urls.urls import Urls
 
 class CreateUser:
     @staticmethod
@@ -10,5 +11,5 @@ class CreateUser:
     "password": password,
     "name":name
 }
-        response = requests.post()
+        response = requests.post(Urls.URL_CREATE_USER,json=payload)
         return response
