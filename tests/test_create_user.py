@@ -24,5 +24,14 @@ class TestCreateUser:
         with allure.step('Проверяем код и текст ответа'):
             assert response_error.status_code == 403 and response_error.json()['message'] ==CreateUserData.TEXT_CREATE_USER_403
 
+    @allure.title('Создание пользователя, не передавая пароль')
+    def test_create_user_no_password_error(self,generate_random_email,generate_random_name):
+        email = generate_random_email
+        name = generate_random_name
+        response = CreateUser.post_create_login(email,'',name)
+        response_error = CreateUser.post_create_login(email,'',name)
+        with allure.step('Проверяем код и текст ответа'):
+            assert response_error.status_code == 403 and response_error.json()['message'] ==CreateUserData.TEXT_CREATE_USER_NO_PASSWORD
+
 
 
