@@ -1,6 +1,4 @@
 import allure
-import requests
-import pytest
 from methods.base_api import BaseApi
 from data.create_user_data import CreateUserData
 
