@@ -2,7 +2,7 @@ import requests
 import allure
 from urls.urls import Urls
 
-class LoginUser:
+class LoginUserApi:
     @staticmethod
     @allure.step('Вызов метода авторизации')
     def post_login_user(email,password):
