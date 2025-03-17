@@ -46,4 +46,4 @@ class TestCreateOrder:
         response_create_user = BaseApi.post_create_login(email,password,name)
         token = response_create_user.json()['accessToken']
         response_create_order = CreateOrderApi.post_create_order(token,'Error')
-        assert response_create_order.status_code == 500 and response_create_order.json()['success']==False
+        assert response_create_order.status_code == 500

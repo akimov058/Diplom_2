@@ -13,3 +13,8 @@ class TestGetOrder:
         response = GetOrderApi.get_order(token)
         assert response.status_code == 200 and response.json()['success'] == True
 
+    @allure.title('Получение заказов конкретного пользователя - неавторизованный пользователь')
+    def test_get_order_no_authorization(self):
+        response = GetOrderApi.get_order()
+        assert response.status_code == 401 and response.json()['success'] == False
+
